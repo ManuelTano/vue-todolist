@@ -27,6 +27,7 @@ const root = new Vue({
   name: 'Vue ToDoList',
   el: '#root',
   data: {
+    newTask: '',
     todo: [
       {
         text: 'Fare la spesa',
@@ -56,6 +57,14 @@ const root = new Vue({
   methods: {
     deleteTask(index) {
       this.todo.splice(index, 1);
+    },
+    addTask(textelement) {
+      const nuovaLista = {
+        text: textelement
+      }
+      this.todo.push(nuovaLista);
+      this.newTask = ''; 
+
     }
   }
 });

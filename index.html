@@ -33,14 +33,20 @@
             <h3 v-if="!todo.length" class="text-center mt-5">Non ci sono cose da fare</h3>
             <ul class="list-group my-5">
                 <li v-for="(list, i) in todo" class="list-group-item d-flex 
-                justify-content-between"  :class="{'text-decoration-line-through': 
+                justify-content-between" :class="{'text-decoration-line-through': 
                 list.done === true}">
-                {{ list.text }}
-                <button type="button"class="btn-close" @click="deleteTask(i)"></button></i>
-            </li>
-        </ul>
+                    {{ list.text }}
+                    <button type="button" class="btn-close" @click="deleteTask(i)"></button></i>
+                </li>
+            </ul>
+            <div class="input-group">
+                <input v-model.trim="newTask" type="text" class="form-control" placeholder="Aggiungi task">
+                <button type="button" class="btn btn-success" @click="addTask(newTask)">
+                    <i class="fa-solid fa-plus"></i> Aggiungi
+                </button>
+            </div>
+        </div>
     </div>
-   </div>
     <script src="js/script.js"></script>
 </body>
 
