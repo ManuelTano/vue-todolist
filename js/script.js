@@ -19,3 +19,44 @@
 //  il todo alla lista
 // 2- cliccando sul testo dell'item, invertire il valore della proprietà done del 
 // todo corrispondente (se done era uguale a false, impostare true e viceversa)
+
+
+Vue.config.devtools = true;
+
+const root = new Vue({
+  name: 'Vue ToDoList',
+  el: '#root',
+  data: {
+    todo: [
+      {
+        text: 'Fare la spesa',
+        done: true,
+      },
+      {
+        text: 'Dare da mangiare al gatto',
+        done: false,
+      },
+      {
+        text: 'Chiamare idraulico',
+        done: true,
+      },
+      {
+        text: 'Comprare biglietto per Caparezza',
+        done: false,
+      },
+      {
+        text: 'Portare Bryan al compleanno',
+        done: false,
+      },
+    ],
+  },
+  computed: {
+    
+  },
+  methods: {
+
+  }
+});
+
+
+

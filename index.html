@@ -27,7 +27,18 @@
 </head>
 
 <body>
-    
+    <div class="container p-5">
+        <h1 class="text-center fw-bold">TO DO LIST</h1>
+        <div id="root">
+            <ul class="list-group my-3">
+                <li v-for="(list, index) in todo" class="list-group-item d-flex 
+                justify-content-between"  :class="{'text-decoration-line-through': 
+                list.done === true}">
+                {{ list.text }}
+            </li>
+        </ul>
+    </div>
+   </div>
     <script src="js/script.js"></script>
 </body>
 
