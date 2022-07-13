@@ -64,7 +64,9 @@ const root = new Vue({
       }
       this.todo.push(nuovaLista);
       this.newTask = ''; 
-
+    },
+    changeDecoration(index) {
+      this.todo[index].done = !this.todo[index].done;
     }
   }
 });

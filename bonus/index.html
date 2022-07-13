@@ -34,8 +34,8 @@
             <ul class="list-group my-5">
                 <li v-for="(list, i) in todo" class="list-group-item d-flex 
                 justify-content-between" :class="{'text-decoration-line-through': 
-                list.done === true}">
-                    {{ list.text }}
+                list.done === true}"  @click="changeDecoration(i)">
+                    {{ list.text }} 
                     <button type="button" class="btn-close" @click="deleteTask(i)"></button></i>
                 </li>
             </ul>
