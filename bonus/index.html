@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue To Do List</title>
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/3ec4a20eeb.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- VUE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div class="container p-5">
+        <h1 class="text-center fw-bold">TO DO LIST</h1>
+        <div id="root">
+            <h3 v-if="!todo.length" class="text-center mt-5">Non ci sono cose da fare</h3>
+            <ul class="list-group my-5">
+                <li v-for="(list, i) in todo" class="list-group-item d-flex 
+                justify-content-between" :class="{'text-decoration-line-through': 
+                list.done === true}">
+                    {{ list.text }}
+                    <button type="button" class="btn-close" @click="deleteTask(i)"></button></i>
+                </li>
+            </ul>
+            <div class="input-group">
+                <input v-model.trim="newTask" type="text" class="form-control"
+                 placeholder="Aggiungi task" @keyup.enter="addTask(newTask)">
+                <button type="button" class="btn btn-success" @click="addTask(newTask)">
+                    <i class="fa-solid fa-plus"></i> Aggiungi
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
