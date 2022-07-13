@@ -54,7 +54,9 @@ const root = new Vue({
     
   },
   methods: {
-
+    deleteTask(index) {
+      this.todo.splice(index, 1);
+    }
   }
 });
 

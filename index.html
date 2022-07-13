@@ -30,11 +30,13 @@
     <div class="container p-5">
         <h1 class="text-center fw-bold">TO DO LIST</h1>
         <div id="root">
-            <ul class="list-group my-3">
-                <li v-for="(list, index) in todo" class="list-group-item d-flex 
+            <h3 v-if="!todo.length" class="text-center mt-5">Non ci sono cose da fare</h3>
+            <ul class="list-group my-5">
+                <li v-for="(list, i) in todo" class="list-group-item d-flex 
                 justify-content-between"  :class="{'text-decoration-line-through': 
                 list.done === true}">
                 {{ list.text }}
+                <button type="button"class="btn-close" @click="deleteTask(i)"></button></i>
             </li>
         </ul>
     </div>
